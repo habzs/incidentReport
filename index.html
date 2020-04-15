@@ -266,11 +266,12 @@ document.addEventListener("touchstart", event => {
     }
 }, {passive: false});
 
+/*
 document.addEventListener('touchmove',
         function(e) {
             e.preventDefault();
         }, {passive:false});
-
+*/
 </script>
 
 <style>
@@ -284,7 +285,7 @@ document.addEventListener('touchmove',
     input[type=”datetime”], input[type=”datetime-local”],
     input[type=”date”], input[type=”month”], input[type=”time”],
     input[type=”week”], input[type=”number”], input[type=”email”],
-    input[type=”url”]{ font-size: 16px; }
+    input[type=”url”]{ font-size: 16px !important; }
     /* end mobile styles */
     }
 </style>
