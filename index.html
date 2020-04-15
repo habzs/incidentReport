@@ -4,6 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>Incident report generator</title>
+
+</head>
+
+<body style="touch-action: none;">
+
     <div class="mui-appbar">
         <table width="100%">
           <tr style="vertical-align:middle;">
@@ -11,10 +16,7 @@
             <!-- <td class="mui--appbar-height" align="right">Right Side</td> -->
           </tr>
         </table>
-      </div>
-</head>
-
-<body>
+    </div>
 
     <div class="mui-container-fluid" style="margin-top:10px;">
         <form id="form1" class="mui-form">
@@ -257,7 +259,7 @@ $(document).on("focus", ".autoc", function() {
 myElement.addEventListener("click", event => {});
 document.addEventListener("touchstart", event => {
     if(event.touches.length > 1) {
-        console.log("zoom plz stahp");
+        alert
         event.preventDefault();
         event.stopPropagation(); // maybe useless
     }
