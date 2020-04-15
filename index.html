@@ -2,9 +2,8 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>Incident report generator</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 </head>
 
 <body style="touch-action: none;">
@@ -256,6 +255,8 @@ $(document).on("focus", ".autoc", function() {
 })
 
 
+// STOP AUTO ZOOM
+
 myElement.addEventListener("click", event => {});
 document.addEventListener("touchstart", event => {
     if(event.touches.length > 1) {
@@ -265,7 +266,10 @@ document.addEventListener("touchstart", event => {
     }
 }, {passive: false});
 
-
+document.addEventListener('touchmove',
+        function(e) {
+            e.preventDefault();
+        }, {passive:false});
 
 </script>
 
