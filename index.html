@@ -4,17 +4,22 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Incident report generator</title>
-    <div>
-        <h1 class="mui-container-fluid">7th coy Incident Report Generator</h1>
-    </div>
+    <div class="mui-appbar">
+        <table width="100%">
+          <tr style="vertical-align:middle;">
+            <td class="mui--appbar-height mui-container-fluid mui--text-headline">7th Coy Incident Report Generator</td>
+            <!-- <td class="mui--appbar-height" align="right">Right Side</td> -->
+          </tr>
+        </table>
+      </div>
 </head>
 
 <body>
 
-    <div class="mui-container-fluid">
+    <div class="mui-container-fluid mui-panel">
         <form id="form1" class="mui-form">
             <div class="mui-textfield mui-textfield--float-label">
-                <input pattern="[0-9]" type="number" id="fourDigits" name="fourDigits" onfocusout="fillName()">
+                <input pattern="[0-9]" inputmode="numeric" type="number" id="fourDigits" name="fourDigits" onfocusout="fillName()">
                 <label for="fourDigits">4D:</label>
             </div>
 
@@ -35,7 +40,7 @@
                 </div>
 
                 <div pattern="[0-9]" class="mui-textfield mui-textfield--float-label mui-col-xs-6">
-                    <input pattern="[0-9]" type="number" id="day1" name="day1">
+                    <input pattern="[0-9]" inputmode="numeric" type="number" id="day1" name="day1">
                     <label for="day1">Days:</label>
                 </div>
             </div>
@@ -44,10 +49,13 @@
     </div>
 
     <div class="mui-container-fluid">
-        <button onclick="addStatus()">+</button>
-        <button onclick="generateOutput()" class="add">Generate</button><br><br>
+        <button onclick="addStatus()" class="mui-btn mui-btn--primary">+</button>
+        <button onclick="generateOutput()" class="add mui-btn mui-btn--primary">Generate</button><br><br>
 
-        <textarea id="outputTextArea" rows="4" cols="50">This is a test!</textarea>
+        <div class="mui-textfield">
+            <!-- <textarea id="outputTextArea" rows="4" cols="50">T</textarea> -->
+            <textarea id="outputTextArea" placeholder="Copy generated text here"></textarea>
+        </div>
     </div>
 </body>
 
@@ -91,6 +99,7 @@
         var dayInput = document.createElement("INPUT");
         dayInput.setAttribute("type", "number");
         dayInput.setAttribute("pattern", "[0-9]");
+        dayInput.setAttribute("inputmode", "numeric");
         dayInput.setAttribute("id", "day" + statusCounter);
         document.getElementById("dayDiv" + statusCounter).appendChild(dayInput);
 
