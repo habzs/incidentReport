@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>Incident report generator</title>
     <div class="mui-appbar">
         <table width="100%">
@@ -54,8 +54,11 @@
 
         <div class="mui-textfield">
             <!-- <textarea id="outputTextArea" rows="4" cols="50">T</textarea> -->
-            <textarea id="outputTextArea" placeholder="Copy generated text here"></textarea>
+            <textarea id="outputTextArea" placeholder="Generated text here"></textarea>
         </div>
+
+        <button onclick="copyToClipboard()" class="mui-btn mui-btn--primary">Copy</button>
+
     </div>
 </body>
 
@@ -187,9 +190,6 @@
     function outputFunc(item, index) {
     lister += item + ", ";
     }
-
-
-
     
     function fillName(){
 
@@ -208,6 +208,18 @@
 
             }
         }
+    }
+
+    function copyToClipboard(){
+          /* Get the text field */
+        var copyText = document.getElementById("outputTextArea");
+
+        /* Select the text field */
+        copyText.select(); 
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
     }
 
     // 2304 REC TRISTAN TOK YANG JUN has finished reporting sick at RHMC for open wound and received 5 days EX RMJ (040420-080420).
