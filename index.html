@@ -14,7 +14,7 @@
     <div class="mui-container-fluid">
         <form id="form1" class="mui-form">
             <div class="mui-textfield mui-textfield--float-label">
-                <input inputmode="numeric" type="number" id="fourDigits" name="fourDigits" onfocusout="fillName()">
+                <input pattern="[0-9]" type="number" id="fourDigits" name="fourDigits" onfocusout="fillName()">
                 <label for="fourDigits">4D:</label>
             </div>
 
@@ -35,7 +35,7 @@
                 </div>
 
                 <div pattern="[0-9]" class="mui-textfield mui-textfield--float-label mui-col-xs-6">
-                    <input inputmode="numeric" type="number" id="day1" name="day1">
+                    <input pattern="[0-9]" type="number" id="day1" name="day1">
                     <label for="day1">Days:</label>
                 </div>
             </div>
@@ -90,7 +90,7 @@
 
         var dayInput = document.createElement("INPUT");
         dayInput.setAttribute("type", "number");
-        dayInput.setAttribute("inputmode", "numeric");
+        dayInput.setAttribute("pattern", "[0-9]");
         dayInput.setAttribute("id", "day" + statusCounter);
         document.getElementById("dayDiv" + statusCounter).appendChild(dayInput);
 
