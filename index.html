@@ -14,9 +14,9 @@
       </div>
 </head>
 
-<body style="touch-action: none;">
+<body>
 
-    <div class="mui-container-fluid">
+    <div class="mui-container-fluid" style="margin-top:10px;">
         <form id="form1" class="mui-form">
             <div class="mui-textfield mui-textfield--float-label">
                 <input pattern="[0-9]" inputmode="numeric" type="number" id="fourDigits" name="fourDigits" onfocusout="fillName()">
@@ -253,13 +253,17 @@ $(document).on("focus", ".autoc", function() {
     });
 })
 
-/*
-$(function(){
-	$(".add").click(function(){
-  	$('<input name=color class="get-color">').appendTo("body")
-  })
-})
-*/
+
+myElement.addEventListener("click", event => {});
+document.addEventListener("touchstart", event => {
+    if(event.touches.length > 1) {
+        console.log("zoom plz stahp");
+        event.preventDefault();
+        event.stopPropagation(); // maybe useless
+    }
+}, {passive: false});
+
+
 
 </script>
 
