@@ -7,11 +7,12 @@
 <!-- JQUERY -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="moment.js"></script>
 <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />    
 
 <head>
     <title>Incident report generator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
 <body>
@@ -124,21 +125,13 @@
         // ---
     }
 
-    var today = new Date();
-    var day, month, year;
-    var currentDate;
     var formInput = document.getElementById("form1");
-
-    var dd = today.getDate();
-    var mm = today.getMonth()+1;
-    var yy = 20;
 
     function generateOutput(){
 
         statusOutput = [];
         
         // formInput = document.getElementById("form1");
-
         fourDigits = formInput.elements[0].value;
         name = formInput.elements[1].value;
         reason = formInput.elements[2].value;
@@ -152,39 +145,16 @@
             statusOutput[i] = formInput.elements.namedItem("day" + statusBox).value + " days";
             // Adds status
             statusOutput[i] += " " + formInput.elements.namedItem("status" + statusBox).value;
-
-
-            
+            // Get duration of status from form
+            statusDuration = parseInt(formInput.elements.namedItem("day" + statusBox).value);
             // Adds date
-            futureDD = parseInt(dd) + parseInt(formInput.elements.namedItem("day" + statusBox).value);
+            currentDate = moment().format('DDMMYY');
+            endDate = moment().add(statusDuration, 'day').format('DDMMYY');
 
-            // Adds "0" if day/month is only 1 digit.
-            if (dd < 10) {
-                dd = "0" + dd;
-            }
-
-            if (mm < 10) {
-                mm = "0" + mm;
-            }
+            statusOutput[i] += " (" + currentDate + "-" + endDate + ")";
             
-            endDate = futureDD.toString() + mm + yy;
-            currentDate = dd + mm + yy;
-
-            statusOutput[i] += " (" + currentDate+ "-" + endDate + ")";
-            
-
             console.log(statusOutput);
-
-            console.log("type of dd: " + typeof(dd));
-
-            console.log("futureDate: " + futureDD);
             console.log("currentDate: " + currentDate);
-
-
-            // Resets manipulated dd and mm
-            dd = today.getDate();
-            mm = today.getMonth() + 1;
-
         }
 
         console.log("statusBox: " + statusBox);
@@ -222,7 +192,7 @@
     }
 
     function copyToClipboard(){
-          /* Get the text field */
+        /* Get the text field */
         var copyText = document.getElementById("outputTextArea");
 
         /* Select the text field */
@@ -232,9 +202,6 @@
         /* Copy the text inside the text field */
         document.execCommand("copy");
     }
-
-    // 2304 REC TRISTAN TOK YANG JUN has finished reporting sick at RHMC for open wound and received 5 days EX RMJ (040420-080420).
-
 
 </script>
 
@@ -252,23 +219,6 @@ $(document).on("focus", ".autoc", function() {
 })
 
 
-// STOP AUTO ZOOM
-
-myElement.addEventListener("click", event => {});
-document.addEventListener("touchstart", event => {
-    if(event.touches.length > 1) {
-        alert
-        event.preventDefault();
-        event.stopPropagation(); // maybe useless
-    }
-}, {passive: false});
-
-/*
-document.addEventListener('touchmove',
-        function(e) {
-            e.preventDefault();
-        }, {passive:false});
-*/
 </script>
 
 <style>
