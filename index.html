@@ -7,8 +7,10 @@
 <!-- JQUERY -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="moment.js"></script>
 <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />    
+<!-- MOMENT JS -->
+<script src="moment.js"></script>
+
 
 <head>
     <title>Incident report generator</title>
@@ -135,13 +137,13 @@
         fourDigits = formInput.elements[0].value;
         name = formInput.elements[1].value;
         reason = formInput.elements[2].value;
-        
+
         // statusBox is box ID, statusCounter is the number of boxes there are.
         // loops through number of boxes, and adds it into the array.
         for (let i=0; i<statusCounter; i++) {
             statusBox = i + 1;
 
-            // Checks if day is more than 1, if it is, use correcr grammar "days".
+            // Checks if day is more than 1, if it is, use correct grammar "days".
             if (formInput.elements.namedItem("day" + statusBox).value > 1) {
                 isDaysPlural = "days";
             } else {
@@ -189,21 +191,31 @@
     
     function fillName(){
 
-        recruit = ["ELTON LIEW JUN HAO", "LEONARDO GRAVAMEN TSENG", "GOH JUN WEI", "ANG KHAO SHENG", "MUHAMMAD DANIAL KHAN BIN NORHISSAM", "WONG JUN WEN"];
-
         document.getElementById("name").classList.remove("mui--is-empty", "mui--is-untouched", "mui--is-pristine");
         document.getElementById("name").classList.add("mui--is-touched", "mui--is-dirty", "mui--is-not-empty");
 
         digits = formInput.elements.namedItem("fourDigits").value;
-        for (i=1101;i<1114;i++){
-            if (digits == i) {
-                lookup = i - 1102;
 
-                console.log("Success: " + recruit[lookup]);
-                document.getElementById("name").value = recruit[lookup];
+        console.log("entered");
 
+        $.getJSON('recruits.json', function(recruit) {
+            for (var i=0; i<recruit.length; i++) {
+                if (recruit[i].fourD == digits) {
+                    recruitName = recruit[i].name;
+                    console.log("recruitName: " + recruitName);
+                    document.getElementById("name").value = recruitName;
+                    break;
+                } else {
+                    console.log("failure");
+                    //console.log("recruitName: " + recruitName);
+                    console.log("i: " + i);
+                    console.log("test: " + recruit[i].fourD)
+                    document.getElementById("name").value = "ERROR: Check 4D";
+                }
             }
-        }
+
+        });
+        
     }
 
     function copyToClipboard(){
