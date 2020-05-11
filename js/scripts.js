@@ -25,11 +25,9 @@ function addStatus(){
     var statusLabel = document.createElement("LABEL");
     statusLabel.textContent = "Status: ";
     document.getElementById("statusDiv" + statusCounter).appendChild(statusLabel);
-
     // ---
 
     // --- DAY GENERATION ---
-
     var dayDiv = document.createElement("div");
     dayDiv.setAttribute("class", "mui-textfield mui-textfield--float-label mui-col-xs-6");
     dayDiv.setAttribute("id", "dayDiv" + statusCounter);
@@ -45,7 +43,6 @@ function addStatus(){
     var dayLabel = document.createElement("LABEL");
     dayLabel.textContent = "Days: ";
     document.getElementById("dayDiv" + statusCounter).appendChild(dayLabel);
-
     // ---
 }
 
