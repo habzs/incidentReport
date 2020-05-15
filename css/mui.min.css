@@ -2646,3 +2646,9 @@ h5 {
 .header-shadow {
     box-shadow: 0 2px 5px rgba(0,0,0,.26);
 }
+
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
