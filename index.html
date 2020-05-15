@@ -43,7 +43,7 @@
 
 <head>
 
-    <title>7th Coy Tools</title>
+    <title>7th Coy Toolbox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 </head>
@@ -59,7 +59,7 @@
         </table>
     </div>
 
-    <ul class="mui-tabs__bar">
+    <ul class="mui-tabs__bar header-shadow">
         <li class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="pane-default-1">Incident Report</a></li>
         <li><a data-mui-toggle="tab" data-mui-controls="pane-default-2">4D Look Up</a></li>
     </ul>
@@ -99,15 +99,15 @@
 
         <div class="mui-container-fluid">
             <button onclick="addStatus()" class="mui-btn mui-btn--primary">+</button>
-            <button onclick="generateOutput()" class="add mui-btn mui-btn--primary">Generate</button><br><br>
+            <button onclick="generateOutput()" class="add mui-btn mui-btn--accent">Generate</button><br><br>
 
             <div class="mui-textfield">
                 <!-- <textarea id="outputTextArea" rows="4" cols="50">T</textarea> -->
                 <textarea id="outputTextArea" placeholder="Generated text here"></textarea>
             </div>
 
-            <button onclick="copyToClipboard()" class="mui-btn mui-btn--primary">Copy</button>
-            <button onclick="clearForm()" class="mui-btn mui-btn--primary">Reset</button>
+            <button onclick="copyToClipboard()" class="mui-btn mui-btn--accent">Copy</button>
+            <button onclick="clearForm()" class="mui-btn mui-btn--flat">Reset</button>
         </div>
     </div>
 
@@ -129,7 +129,7 @@
 
             </form>
 
-            <button onclick="lookUpCopyToClipboard()" class="mui-btn mui-btn--primary">Copy</button>
+            <button onclick="lookUpCopyToClipboard()" class="mui-btn mui-btn--accent">Copy</button>
 
         </div>
     </div>

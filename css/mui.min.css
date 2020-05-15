@@ -194,7 +194,7 @@ body {
 }
 
 a {
-	color: #546e7a;
+	color: #37474f;
 	text-decoration: none
 }
 
@@ -233,8 +233,8 @@ strong {
 
 abbr[title] {
 	cursor: help;
-	-webkit-text-decoration-color: #546e7a;
-	text-decoration-color: #546e7a
+	-webkit-text-decoration-color: #37474f;
+	text-decoration-color: #37474f
 }
 
 h1,
@@ -301,7 +301,7 @@ h6 {
 }
 
 .mui-appbar {
-	background-color: #546e7a;
+	background-color: #37474f;
 	color: #FFF
 }
 
@@ -507,39 +507,39 @@ h6 {
 
 .mui-btn--primary {
 	color: #FFF;
-	background-color: #546e7a
+	background-color: #37474f
 }
 
 .mui-btn--primary:active,
 .mui-btn--primary:focus,
 .mui-btn--primary:hover {
 	color: #FFF;
-	background-color: #39a1f4
+	background-color: #37474f
 }
 
 .mui-btn--primary[disabled]:active,
 .mui-btn--primary[disabled]:focus,
 .mui-btn--primary[disabled]:hover {
 	color: #FFF;
-	background-color: #546e7a
+	background-color: #37474f
 }
 
 .mui-btn--primary.mui-btn--flat {
-	color: #546e7a;
+	color: #37474f;
 	background-color: transparent
 }
 
 .mui-btn--primary.mui-btn--flat:active,
 .mui-btn--primary.mui-btn--flat:focus,
 .mui-btn--primary.mui-btn--flat:hover {
-	color: #546e7a;
+	color: #37474f;
 	background-color: #f2f2f2
 }
 
 .mui-btn--primary.mui-btn--flat[disabled]:active,
 .mui-btn--primary.mui-btn--flat[disabled]:focus,
 .mui-btn--primary.mui-btn--flat[disabled]:hover {
-	color: #546e7a;
+	color: #37474f;
 	background-color: transparent
 }
 
@@ -583,7 +583,7 @@ h6 {
 
 .mui-btn--danger {
 	color: #FFF;
-	background-color: #546e7a
+	background-color: #37474f
 }
 
 .mui-btn--danger:active,
@@ -597,63 +597,63 @@ h6 {
 .mui-btn--danger[disabled]:focus,
 .mui-btn--danger[disabled]:hover {
 	color: #FFF;
-	background-color: #546e7a
+	background-color: #37474f
 }
 
 .mui-btn--danger.mui-btn--flat {
-	color: #546e7a;
+	color: #37474f;
 	background-color: transparent
 }
 
 .mui-btn--danger.mui-btn--flat:active,
 .mui-btn--danger.mui-btn--flat:focus,
 .mui-btn--danger.mui-btn--flat:hover {
-	color: #546e7a;
+	color: #37474f;
 	background-color: #f2f2f2
 }
 
 .mui-btn--danger.mui-btn--flat[disabled]:active,
 .mui-btn--danger.mui-btn--flat[disabled]:focus,
 .mui-btn--danger.mui-btn--flat[disabled]:hover {
-	color: #546e7a;
+	color: #37474f;
 	background-color: transparent
 }
 
 .mui-btn--accent {
-	color: #FFF;
-	background-color: #546e7a
+	color: #000000;
+	background-color: #ffc107
 }
 
 .mui-btn--accent:active,
 .mui-btn--accent:focus,
 .mui-btn--accent:hover {
-	color: #FFF;
-	background-color: #ff5a92
+	color: #000000;
+	background-color: #ffc107
 }
 
 .mui-btn--accent[disabled]:active,
 .mui-btn--accent[disabled]:focus,
 .mui-btn--accent[disabled]:hover {
 	color: #FFF;
-	background-color: #546e7a
+	background-color: #37474f
 }
 
 .mui-btn--accent.mui-btn--flat {
-	color: #546e7a;
+	color: #37474f;
 	background-color: transparent
 }
 
 .mui-btn--accent.mui-btn--flat:active,
 .mui-btn--accent.mui-btn--flat:focus,
 .mui-btn--accent.mui-btn--flat:hover {
-	color: #546e7a;
+	color: #37474f;
 	background-color: #f2f2f2
 }
 
 .mui-btn--accent.mui-btn--flat[disabled]:active,
 .mui-btn--accent.mui-btn--flat[disabled]:focus,
 .mui-btn--accent.mui-btn--flat[disabled]:hover {
-	color: #546e7a;
+	color: #37474f;
 	background-color: transparent
 }
 
@@ -1582,7 +1582,7 @@ h6 {
 .mui-select:focus>select {
 	height: calc(32px + 1px);
 	margin-bottom: -1px;
-	border-color: #546e7a;
+	border-color: #37474f;
 	border-width: 2px
 }
 
@@ -1619,7 +1619,7 @@ h6 {
 	outline: 0;
 	height: calc(32px + 1px);
 	margin-bottom: -1px;
-	border-color: #546e7a;
+	border-color: #37474f;
 	border-width: 2px
 }
 
@@ -1660,7 +1660,7 @@ h6 {
 
 .mui-select:focus>label,
 .mui-select>select:focus~label {
-	color: #546e7a
+	color: #37474f
 }
 
 .mui-select__menu {
@@ -1791,11 +1791,11 @@ h6 {
 }
 
 .mui-tabs__bar>li.mui--is-active {
-	border-bottom: 2px solid #546e7a
+	border-bottom: 2px solid #37474f
 }
 
 .mui-tabs__bar>li.mui--is-active>a {
-	color: #546e7a
+	color: #37474f
 }
 
 .mui-tabs__bar.mui-tabs__bar--justified {
@@ -1849,7 +1849,7 @@ h6 {
 
 .mui-textfield>input:focus~label,
 .mui-textfield>textarea:focus~label {
-	color: #546e7a
+	color: #37474f
 }
 
 .mui-textfield--float-label>label {
@@ -1932,7 +1932,7 @@ h6 {
 
 .mui-textfield>input:focus,
 .mui-textfield>textarea:focus {
-	border-color: #546e7a;
+	border-color: #37474f;
 	border-width: 2px
 }
 
@@ -2024,7 +2024,7 @@ h6 {
 .mui-textfield>textarea:not(:focus).mui--is-invalid:required.mui--is-not-empty,
 .mui-textfield>textarea:not(:focus).mui--is-invalid:required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty),
 .mui-textfield>textarea:not(:focus).mui--is-invalid:required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty) {
-	border-color: #546e7a;
+	border-color: #37474f;
 	border-width: 2px
 }
 
@@ -2050,7 +2050,7 @@ h6 {
 .mui-textfield.mui-textfield--float-label>textarea:invalid:not(:focus):required.mui--is-not-empty~label,
 .mui-textfield.mui-textfield--float-label>textarea:invalid:not(:focus):required:not(:empty):not(.mui--is-empty):not(.mui--is-not-empty)~label,
 .mui-textfield.mui-textfield--float-label>textarea:invalid:not(:focus):required[value]:not([value=""]):not(.mui--is-empty):not(.mui--is-not-empty)~label {
-	color: #546e7a
+	color: #37474f
 }
 
 .mui-textfield:not(.mui-textfield--float-label)>input:invalid:not(:focus):not(:required)~label,
@@ -2059,15 +2059,15 @@ h6 {
 .mui-textfield:not(.mui-textfield--float-label)>textarea:invalid:not(:focus):not(:required)~label,
 .mui-textfield:not(.mui-textfield--float-label)>textarea:invalid:not(:focus):required.mui--is-empty.mui--is-touched~label,
 .mui-textfield:not(.mui-textfield--float-label)>textarea:invalid:not(:focus):required.mui--is-not-empty~label {
-	color: #546e7a
+	color: #37474f
 }
 
 .mui-textfield.mui-textfield--float-label>.mui--is-invalid.mui--is-not-empty:not(:focus)~label {
-	color: #546e7a
+	color: #37474f
 }
 
 .mui-textfield:not(.mui-textfield--float-label)>.mui--is-invalid:not(:focus)~label {
-	color: #546e7a
+	color: #37474f
 }
 
 .mui--no-transition {
@@ -2192,7 +2192,7 @@ h6 {
 }
 
 .mui--text-danger {
-	color: #546e7a
+	color: #37474f
 }
 
 .mui--text-placeholder {
@@ -2200,31 +2200,31 @@ h6 {
 }
 
 .mui--bg-primary {
-	background-color: #546e7a
+	background-color: #37474f
 }
 
 .mui--bg-primary-dark {
-	background-color: #29434e
+	background-color: #102027
 }
 
 .mui--bg-primary-light {
-	background-color: #819ca9
+	background-color: #62727b
 }
 
 .mui--bg-accent {
-	background-color: #546e7a
+	background-color: #37474f
 }
 
 .mui--bg-accent-dark {
-	background-color: #29434e
+	background-color: #102027
 }
 
 .mui--bg-accent-light {
-	background-color: #819ca9
+	background-color: #62727b
 }
 
 .mui--bg-danger {
-	background-color: #546e7a
+	background-color: #37474f
 }
 
 .mui-list--unstyled {
@@ -2641,4 +2641,8 @@ h5 {
 	font-size: 14px;
 	line-height: 18px;
 	text-transform: uppercase
+}
+
+.header-shadow {
+    box-shadow: 0 2px 5px rgba(0,0,0,.26);
 }
