@@ -1759,13 +1759,14 @@ h6 {
 	list-style: none;
 	padding-left: 0;
 	margin-bottom: 0;
-	background-color: transparent;
+    /*background-color: transparent;*/
+    background-color: white;
 	white-space: nowrap;
 	overflow-x: auto
 }
 
 .mui-tabs__bar>li {
-	display: inline-block
+    display: inline-block
 }
 
 .mui-tabs__bar>li>a {
