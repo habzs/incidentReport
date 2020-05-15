@@ -4,9 +4,10 @@ var statusOutput = [];
 var statusBox = 0;
 var lister = "";
 var formInput = document.getElementById("form1");
+var lookUpFormInput = document.getElementById("form2");
 
 
-function addStatus(){
+function addStatus() {
     statusCounter++;
 
     // --- STATUS GENERATION ---
@@ -47,10 +48,10 @@ function addStatus(){
 }
 
 
-function generateOutput(){
+function generateOutput() {
 
     statusOutput = [];
-    
+
     // formInput = document.getElementById("form1");
     fourDigits = formInput.elements[0].value;
     name = formInput.elements[1].value;
@@ -58,7 +59,7 @@ function generateOutput(){
 
     // statusBox is box ID, statusCounter is the number of boxes there are.
     // loops through number of boxes, and adds it into the array.
-    for (let i=0; i<statusCounter; i++) {
+    for (let i = 0; i < statusCounter; i++) {
         statusBox = i + 1;
 
         // Checks if day is more than 1, if it is, use correct grammar "days".
@@ -79,7 +80,7 @@ function generateOutput(){
         endDate = moment().add(statusDuration, 'day').format('DDMMYY');
 
         statusOutput[i] += " (" + currentDate + "-" + endDate + ")";
-        
+
         //console.log(statusOutput);
         //console.log("currentDate: " + currentDate);
     }
@@ -96,7 +97,7 @@ function generateOutput(){
 
 }
 
-function outputFunc(item, index){
+function outputFunc(item, index) {
 
     // Checks if it is the last item in the list, ends it off with a "."
     // Rather than a ","
@@ -107,15 +108,15 @@ function outputFunc(item, index){
     }
 }
 
-function fillName(){
+function fillName() {
 
     document.getElementById("name").classList.remove("mui--is-empty", "mui--is-untouched", "mui--is-pristine");
     document.getElementById("name").classList.add("mui--is-touched", "mui--is-dirty", "mui--is-not-empty");
 
     digits = formInput.elements.namedItem("fourDigits").value;
 
-    $.getJSON('json/namelist.json', function(recruit) {
-        for (var i=0; i<recruit.length; i++) {
+    $.getJSON('json/namelist.json', function (recruit) {
+        for (var i = 0; i < recruit.length; i++) {
             if (recruit[i].fourD == digits) {
                 recruitName = recruit[i].name;
                 //console.log("recruitName: " + recruitName);
@@ -127,15 +128,15 @@ function fillName(){
         }
 
     });
-    
+
 }
 
-function copyToClipboard(){
+function copyToClipboard() {
     /* Get the text field */
     var copyText = document.getElementById("outputTextArea");
 
     /* Select the text field */
-    copyText.select(); 
+    copyText.select();
     copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
     /* Copy the text inside the text field */
@@ -150,9 +151,45 @@ function clearForm() {
 
 var statusList = ["LD", "RIB", "EX. RMJ", "EX. HEAVY LOADS", "EX. UPPER LIMBS", "UFD"];
 
-$(document).on("focus", ".autoc", function() {
-if (!$(this).is(".aced"))
-$(this).addClass("aced").autocomplete({
-  source: statusList
-});
+$(document).on("focus", ".autoc", function () {
+    if (!$(this).is(".aced"))
+        $(this).addClass("aced").autocomplete({
+            source: statusList
+        });
 })
+
+
+// Tab 2 - 4D Lookup
+
+function nameLookUp() {
+
+    digits = lookUpFormInput.elements.namedItem("lookUp4D").value;
+
+    $.getJSON('json/namelist.json', function (recruit) {
+        for (var i = 0; i < recruit.length; i++) {
+            console.log("i: " + i);
+
+            if (recruit[i].fourD == digits) {
+                recruitName = recruit[i].name;
+                //console.log("recruitName: " + recruitName);
+                document.getElementById("lookUpNameOutput").innerHTML = recruitName;
+                break;
+            } else {
+                document.getElementById("lookUpNameOutput").innerHTML = "ERROR: Check 4D";
+            }
+        }
+
+    });
+}
+
+function lookUpCopyToClipboard() {
+    /* Get the text field */
+    var copyText = document.getElementById("lookUpNameOutput");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+}
