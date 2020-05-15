@@ -1762,7 +1762,8 @@ h6 {
     /*background-color: transparent;*/
     background-color: white;
 	white-space: nowrap;
-	overflow-x: auto
+    overflow-x: auto;
+    z-index: 99;
 }
 
 .mui-tabs__bar>li {
