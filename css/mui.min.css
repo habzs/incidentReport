@@ -190,7 +190,8 @@ body {
 	font-weight: 400;
 	line-height: 1.429;
 	color: rgba(0, 0, 0, .87);
-	background-color: #FFF
+	background-color: #FFF;
+	padding-bottom: 50px
 }
 
 a {
