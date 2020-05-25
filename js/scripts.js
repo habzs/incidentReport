@@ -77,6 +77,7 @@ function generateOutput() {
     fourDigits = formInput.elements[0].value;
     name = formInput.elements[1].value;
     reason = formInput.elements[2].value;
+    reasonUpperCase = reason.toUpperCase();
 
     // statusBox is box ID, statusCounter is the number of boxes there are.
     // loops through number of boxes, and adds it into the array.
@@ -110,7 +111,7 @@ function generateOutput() {
     //console.log("statusCounter: " + statusCounter);
 
     statusOutput.forEach(outputFunc);
-    output = fourDigits + " REC " + name + " has finished reporting sick at RHMC for " + reason + " and received " + lister;
+    output = fourDigits + " REC " + name + " has finished reporting sick at RHMC for " + reasonUpperCase + " and received " + lister;
     lister = "";
 
     // Outputs paragraph into textbox.
