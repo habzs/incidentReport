@@ -18,28 +18,14 @@
         display: none;
     }
 
-    /*** iPhone and iOS Form Input Zoom Fixes ***/
-    /* Fix Input Zoom on devices older than iPhone 5: */
-    @media (hover:none) {
+    html {
 
-        /* start mobile styles */
-        select,
-        textarea,
-        input[type=”text”],
-        input[type=”password”],
-        input[type=”datetime”],
-        input[type=”datetime-local”],
-        input[type=”date”],
-        input[type=”month”],
-        input[type=”time”],
-        input[type=”week”],
-        input[type=”number”],
-        input[type=”email”],
-        input[type=”url”] {
-            font-size: 16px !important;
-        }
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden !important;
 
-        /* end mobile styles */
     }
 </style>
 
@@ -68,19 +54,18 @@
     </ul>
 
     <div class="mui-tabs__pane mui--is-active" id="pane-justified-1">
-        <div class="mui-container-fluid" style="margin-top:10px;">
+        <div class="mui-container-fluid" style="margin-top:10px; overflow-x: hidden;">
             <form id="form1" class="mui-form">
+
                 <div class="mui-textfield mui-textfield--float-label">
                     <input pattern="[0-9]" inputmode="numeric" type="number" id="fourDigits" name="fourDigits"
                         onfocusout="fillName()">
                     <label for="fourDigits">4D:</label>
                 </div>
-
                 <div class="mui-textfield mui-textfield--float-label">
                     <input type="text" id="name" name="name">
                     <label for="name">Name:</label>
                 </div>
-
                 <div class="mui-textfield mui-textfield--float-label">
                     <input type="text" id="reason" name="reason">
                     <label for="reason">Reason:</label>

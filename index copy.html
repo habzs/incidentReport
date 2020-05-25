@@ -10,6 +10,8 @@
 <link href="js/jquery/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <!-- MOMENT JS -->
 <script src="js/moment.js"></script>
+<!-- MATERIAL ICONS FONTS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <style>
     .ui-helper-hidden-accessible {
@@ -100,7 +102,9 @@
         </div>
 
         <div class="mui-container-fluid">
-            <button onclick="addStatus()" class="mui-btn mui-btn--primary">+</button>
+            <button onclick="addStatus()" class="material-icons mui-btn mui-btn--primary">add</button>
+            <button onclick="rmStatus()" class="material-icons mui-btn mui-btn--primary" id="rmBtn"
+                disabled>remove</button>
             <button onclick="generateOutput()" class="add mui-btn mui-btn--accent">Generate</button><br><br>
 
             <div class="mui-textfield">
