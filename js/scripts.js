@@ -45,8 +45,29 @@ function addStatus() {
     dayLabel.textContent = "Days: ";
     document.getElementById("dayDiv" + statusCounter).appendChild(dayLabel);
     // ---
+    document.getElementById("rmBtn").disabled = false;
 }
 
+function rmStatus() {
+
+    if (statusCounter >= 2) {
+        // --- STATUS REMOVE ---
+        var currentStatusDiv = document.getElementById("statusDiv" + statusCounter);
+        currentStatusDiv.remove();
+        // ---
+
+        // --- DAY REMOVE ---
+        var currentDayDiv = document.getElementById("dayDiv" + statusCounter);
+        currentDayDiv.remove();
+        // ---
+        statusCounter--;
+
+        if (statusCounter == 1) {
+            document.getElementById("rmBtn").disabled = true;
+        }
+
+    }
+}
 
 function generateOutput() {
 
@@ -144,12 +165,33 @@ function copyToClipboard() {
 }
 
 function clearForm() {
-    location.reload();
+    //location.reload();
+    for (var i = 0; 1 < statusCounter; i++) {
+        rmStatus();
+    }
+
+    document.getElementById("form1").reset();
+
+    document.getElementById("fourDigits").classList.add("mui--is-empty", "mui--is-untouched", "mui--is-pristine");
+    document.getElementById("fourDigits").classList.remove("mui--is-touched", "mui--is-dirty", "mui--is-not-empty");
+
+    document.getElementById("name").classList.add("mui--is-empty", "mui--is-untouched", "mui--is-pristine");
+    document.getElementById("name").classList.remove("mui--is-touched", "mui--is-dirty", "mui--is-not-empty");
+
+    document.getElementById("reason").classList.add("mui--is-empty", "mui--is-untouched", "mui--is-pristine");
+    document.getElementById("reason").classList.remove("mui--is-touched", "mui--is-dirty", "mui--is-not-empty");
+
+    document.getElementById("status1").classList.add("mui--is-empty", "mui--is-untouched", "mui--is-pristine");
+    document.getElementById("status1").classList.remove("mui--is-touched", "mui--is-dirty", "mui--is-not-empty");
+
+    document.getElementById("day1").classList.add("mui--is-empty", "mui--is-untouched", "mui--is-pristine");
+    document.getElementById("day1").classList.remove("mui--is-touched", "mui--is-dirty", "mui--is-not-empty");
+
 }
 
 // AUTOCOMPLETE
 
-var statusList = ["LD", "RIB", "EX. RMJ", "EX. HEAVY LOADS", "EX. UPPER LIMBS", "UFD"];
+var statusList = ["LD", "RIB", "EX. RMJ", "EX. HEAVY LOADS", "EX. UPPER LIMBS", "EX. GRENADES AND EXPLOSIVES", "EX. HANDLING OF FIREARMS", "EX. LIVE FIRING AND FIRING OF BLANKS", "UFD"];
 
 $(document).on("focus", ".autoc", function () {
     if (!$(this).is(".aced"))
@@ -157,6 +199,8 @@ $(document).on("focus", ".autoc", function () {
             source: statusList
         });
 })
+
+
 
 
 // Tab 2 - 4D Lookup
