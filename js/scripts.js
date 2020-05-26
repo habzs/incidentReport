@@ -172,6 +172,7 @@ function clearForm() {
     }
 
     document.getElementById("form1").reset();
+    document.getElementById("outputTextArea").value = "";
 
     document.getElementById("fourDigits").classList.add("mui--is-empty", "mui--is-untouched", "mui--is-pristine");
     document.getElementById("fourDigits").classList.remove("mui--is-touched", "mui--is-dirty", "mui--is-not-empty");
