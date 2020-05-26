@@ -213,7 +213,6 @@ function nameLookUp() {
 
     $.getJSON('json/namelist.json', function (recruit) {
         for (var i = 0; i < recruit.length; i++) {
-            console.log("i: " + i);
 
             if (recruit[i].fourD == digits) {
                 recruitName = recruit[i].name;
