@@ -99,7 +99,7 @@ function generateOutput() {
         statusDuration = parseInt(formInput.elements.namedItem("day" + statusBox).value);
         // Calculates dates
         currentDate = moment().format('DDMMYY');
-        endDate = moment().add(statusDuration, 'day').format('DDMMYY');
+        endDate = moment().add(statusDuration - 1, 'day').format('DDMMYY');
 
         statusOutput[i] += " (" + currentDate + "-" + endDate + ")";
 
@@ -115,7 +115,7 @@ function generateOutput() {
     lister = "";
 
     // Outputs paragraph into textbox.
-    document.getElementById("outputTextArea").innerHTML = output;
+    document.getElementById("outputTextArea").value = output;
 
 }
 
