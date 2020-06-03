@@ -217,10 +217,10 @@ function nameLookUp() {
             if (recruit[i].fourD == digits) {
                 recruitName = recruit[i].name;
                 //console.log("recruitName: " + recruitName);
-                document.getElementById("lookUpNameOutput").innerHTML = recruitName;
+                document.getElementById("lookUpNameOutput").value = recruitName;
                 break;
             } else {
-                document.getElementById("lookUpNameOutput").innerHTML = "ERROR: Check 4D";
+                document.getElementById("lookUpNameOutput").value = "ERROR: Check 4D";
             }
         }
 
