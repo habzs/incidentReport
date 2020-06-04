@@ -2655,8 +2655,3 @@ h5 {
     position: sticky;
     top: 0;
 }
-
-input[type=search] {
-    -webkit-appearance:textfield;
-    -webkit-box-sizing:content-box;
-}
