@@ -2655,14 +2655,3 @@ h5 {
     position: sticky;
     top: 0;
 }
-
-
-#fourDigits::-webkit-search-decoration {
--webkit-appearance: none;
-}
-
-
-#lookUp4D::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-  
