@@ -2660,8 +2660,3 @@ input[type=search] {
     -webkit-appearance:textfield;
     -webkit-box-sizing:content-box;
 }
-
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button {
-    display: none;
-}
